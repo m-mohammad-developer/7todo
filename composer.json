@@ -1,0 +1,15 @@
+{
+    "name": "mohammad/7todo",
+    "type": "project",
+    "require": {
+        "hekmatinasser/verta": "^1.11"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mr.Programmer",
+            "email": "m.mohammadi.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
