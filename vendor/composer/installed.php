@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '3446fd070bc5942c7ea4aeb23d0a48d57f909c7b',
     'name' => 'mohammad/7todo',
   ),
   'versions' => 
@@ -130,12 +130,12 @@
     ),
     'mohammad/7todo' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '3446fd070bc5942c7ea4aeb23d0a48d57f909c7b',
     ),
     'nesbot/carbon' => 
     array (
