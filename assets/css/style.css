@@ -45,6 +45,7 @@ body {
   line-height: 40px;
   font-size: 1.5em;
   font-weight: 700;
+  
 }
 .pageHeader .userPanel {
   width: 40%;
@@ -119,6 +120,10 @@ body {
 }
 .main .nav .menu ul {
   padding-left: 0px;
+}
+.main .nav .menu ul li a{
+  text-decoration: none;
+  color: inherit;
 }
 .main .nav .menu ul li {
   cursor: pointer;
@@ -266,4 +271,36 @@ body {
 
 .clear {
   clear: both;
+}
+
+
+input {
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 2px solid gray;
+}
+
+.remove {
+  color: rgb(250, 79, 57) !important;
+  float: right;
+  padding-right: 5px;
+  font-weight: 220;
+}
+
+.remove:hover {
+  font-weight: 900 !important;
+  color: rgb(236, 1, 1) !important;
+}
+
+
+
+.clickable:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  border: 2px solid rgba(26, 24, 24, 0.541);
+}
+
+span.created-at {
+  font-size: 11px;
+  margin-right: 12px;
 }
