@@ -12,7 +12,7 @@ function addFolder($folder_name) {
     $stmt->bindParam(':user_id', $current_user_id);
     $stmt->execute();
 
-    return $stmt->rowCount();
+    return $stmt->rowCount() > 0 ? $pdo->lastInsertId() : false;
 }
 
 
@@ -43,8 +43,18 @@ function getFolders() {
 
 
 /*** Task Fucntions ***/
-function addTasks() {
-    return [1, 2, 3];
+function addTask($taskTitle, $folder_id) {
+    global $pdo;
+    $current_user_id = getCurrentUserId();
+
+    $sql = "INSERT INTO tasks (title, user_id, folder_id) VALUES (:title, :user_id, :folder_id)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':title'   , $taskTitle);
+    $stmt->bindParam(':user_id', $current_user_id);
+    $stmt->bindParam(':folder_id', $folder_id);
+    $stmt->execute();
+
+    return $stmt->rowCount();
 }
 
 function getTasks() {
@@ -81,3 +91,19 @@ function deleteTask($task_id) {
     return $stmt->rowCount();
 }
 
+
+// toggle task is_done value toggleStatus
+
+function toggleStatus($task_id) {
+    global $pdo;
+
+    $current_user_id = getCurrentUserId();
+
+    $sql = "UPDATE tasks SET is_done = 1 - is_done WHERE id = :id and user_id = :user_id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $task_id);
+    $stmt->bindParam(':user_id', $current_user_id);
+    $stmt->execute();
+
+    return $stmt->rowCount();
+}

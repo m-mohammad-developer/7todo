@@ -21,9 +21,29 @@ switch ($_POST['action']) {
         }
         echo addFolder($_POST['folderName']);
         break;
-    // case "addTask":
-    //     var_dump($_POST['action']);
-    //     break;
+
+    case "addTask":
+        $folderId = $_POST['folderId'];
+        $taskTitle = $_POST['taskTitle'];
+        if ( !isset($folderId) || empty($folderId) ) {
+            echo "فولدر را انتخاب کنید";
+            die();
+        }
+        if ( !isset($taskTitle) || strlen($taskTitle) < 3 ) {
+            echo "عنوان تسک باید بزرگتر از 2 حرف باشد";
+            die();
+        }
+        echo addTask($taskTitle, $folderId);
+        break;
+        // UPDATE tasks status
+    case "doneSwitch":
+            $taskId = $_POST['taskId'];
+            if (!isset($taskId) || !is_numeric($taskId)) {
+                echo  "آیدی تسک معتبر نیست";
+                die();
+            }
+            echo toggleStatus($taskId);
+            break;
 
     default:
         diePage("Invalid Action!");

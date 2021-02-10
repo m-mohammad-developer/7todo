@@ -5,6 +5,9 @@ function getCurrentUrl() {
     return 1;
 }
 
+function site_url($uri = '') {
+    return BASE_URL . $uri;
+}
 function diePage($msg) {
     echo "<div style='padding: 46px; width: 90%; margin: 40px auto; background: #c31c1c; color: white; border: 2px solid #de5454; border-radius: 6px; font-size: 20px; font-family: sans-serif;'>$msg</div>";
     die;
