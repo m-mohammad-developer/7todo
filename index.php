@@ -3,6 +3,20 @@
 include "bootstrap/init.php";
 
 
+if (isset($_GET['logout'])) {
+    logout();
+    
+}
+
+
+
+if (!isLoggedIn()) {
+    header("Location: " . site_url("auth.php"));
+}
+
+#user is logged in
+$user = getLoginUser();
+
 if (isset($_GET['delete_folder']) && is_numeric($_GET['delete_folder'])) {
     $deleted_conut = deleteFolder($_GET['delete_folder']);
     // echo $deleted_conut . " Successfully Deleted";

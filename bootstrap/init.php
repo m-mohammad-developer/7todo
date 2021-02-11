@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include "constants.php";
 include "config.php";
 include BASE_PATH . "vendor/autoload.php";
